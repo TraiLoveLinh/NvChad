@@ -55,3 +55,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Map F2 to open Alacritty in the current directory
+vim.api.nvim_set_keymap("n", "<F2>", ":!alacritty --working-directory=\"" .. vim.fn.expand("%:p:h") .. "\"<CR>", { noremap = true, silent = true })
+
+
